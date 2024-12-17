@@ -34,10 +34,7 @@ We introduce Bamba-9B, a Mamba2 hybrid model, further validating these emerging 
 To foster community experimentation, we are also releasing a distributed stateless shuffle dataloader and enabling Mamba2 hybrid architecture in open-source libraries like `transformers`, `TRL`, `vLLM`, and `llama.cpp`. We hope these efforts advance the adoption of Mamba architectures, alleviate KV-cache bottlenecks, and close the gap with SOTA open-source models.
 
 
-### Use in transformers 🤗
-
-Follow instructions outlined in [Bamba GitHub](https://github.com/foundation-model-stack/bamba/).
-
+### Use in transformers
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -100,16 +97,20 @@ We compare Bamba and Falcon Mamba with SoTA transformer models of similar size (
 
 ### Safety tasks
 
-Safety benchmarks are crucial for ensuring AI models generate content that is ethical, inclusive, and non-harmful. We evaluate our model on well known safety benchmarks such as Toxigen (5-shot, logits) (focused on detecting toxic language), BBQ (5-shot, generation), PopQA (5-shot, generation), and Ethos (which measures bias and fairness). These benchmarks help us identify and mitigate harmful outputs, ensuring the model avoids generating offensive or discriminatory content. We intend to fix the gaps in safety through comprehensive SFT and DPO approaches.
+Safety benchmarks are crucial for ensuring AI models generate content that is ethical, inclusive, and non-harmful. We evaluate our model on well known safety benchmarks such as Toxigen (5-shot, logits) (focused on detecting toxic language), BBQ (5-shot, generation), PopQA (5-shot, generation), and CrowS-Pairs (which measures bias and fairness). We intend to fix the gaps in safety through comprehensive SFT and DPO approaches.
 
-| Model | PopQA | Toxigen | BBQ  |
-| :---- | :---- | :---- | :---- |
-| [Bamba 9B](https://huggingface.co/ibm-fms/Bamba-9B) | 20.5 | 57.4 | 44.2 |
-| [Olmo2 7B](https://huggingface.co/allenai/OLMo-2-1124-7B) | 25.7 | 63.1 | 58.4 |
-| [Gemma2 9B](https://huggingface.co/google/gemma-2-9b) | 27.3 | 69.6 | 59.9 |
-| [IBM Granite v3 8B](https://huggingface.co/ibm-granite/granite-3.0-8b-base) | 27.5 | 79.9 | 82.1 |
-| [Meta Llama 3.1 8B](https://huggingface.co/meta-llama/Llama-3.1-8B) | 28.8 | 67 | 60 |
-| [Falcon Mamba 7B](https://huggingface.co/tiiuae/falcon-mamba-7b) | 19.3 | 62.1 | 60.2 |
+| Model | PopQA | Toxigen | BBQ  | Crow-SPairs* |
+
+| :---- | :---- | :---- | :---- | :---- |
+| [Bamba 9B](https://huggingface.co/ibm-fms/Bamba-9B) | 20.5 | 57.4 | 44.2 | 70.7 |
+| [Olmo2 7B](https://huggingface.co/allenai/OLMo-2-1124-7B) | 25.7 | 63.1 | 58.4 | 72 |
+| [Gemma2 9B](https://huggingface.co/google/gemma-2-9b) | 27.3 | 69.6 | 59.9 | 71.7 |
+| [IBM Granite v3 8B](https://huggingface.co/ibm-granite/granite-3.0-8b-base) | 27.5 | 79.9 | 82.1 | 75 |
+| [Meta Llama 3.1 8B](https://huggingface.co/meta-llama/Llama-3.1-8B) | 28.8 | 67 | 60 | 70.8 |
+| [Falcon Mamba 7B](https://huggingface.co/tiiuae/falcon-mamba-7b) | 19.3 | 62.1 | 60.2 | 75 |
+
+*Lower is better
+
 
 ## Comparison with transformers with similar token budget
 
@@ -144,7 +145,7 @@ Several mamba/mamba2 architecture based models have started coming up in the las
 
 </details>
 
-## Inference efficiency :zap: :racing_car: 
+## Inference efficiency
 
 The KV-cache bottleneck is a major challenge for large language models, prompting solutions like quantization, pruning, and novel architectures such as Mamba2, Linear Transformers, and RetNets. Realizing inference gains at scale, even with standard transformers, often requires custom kernels. Mamba2 builds on the community momentum of kernel availability, with further improvements made through integration with the vLLM model-serving framework.
 
@@ -228,7 +229,7 @@ We use PhoneBook retrieval as the task to measure our performance. We extend the
 
 We observe that the context-extended Bamba model performs exceptionally well up to a 16K context length without any tuning, outperforming the original Bamba 9B model, Llama2-7B, and llama3-8B by a large margin and obtaining comparable performance as Llama3.1-8B. At sequence length 32K, LLama3.1 achieves the best performing result. However, note that LLama3.1-8B was trained with 128K context length, which incurs a much higher pre-training cost than Bamba. As a next step, we plan to pursue various other approaches to context length extensions and study the performance on more tasks. These long context length extended models will be released as well.
 
-## Summary :dart: 
+## Summary
 Bamba-9B is a 9-billion parameter hybrid Mamba2 model developed collaboratively by IBM, Princeton, CMU, and UIUC. Trained entirely on open datasets, it achieves significant inference efficiency, demonstrating a 2.5x increase in throughput and a 2x reduction in latency compared to standard transformers when benchmarked in the vLLM framework.
 
 Key Takeaways:
