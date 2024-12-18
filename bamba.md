@@ -179,7 +179,7 @@ We compare Bamba-9B and Falcon Mamba with SoTA transformer models of similar siz
 
 ### Safety tasks
 
-Safety benchmarks are crucial for ensuring AI models generate content that is ethical, inclusive, and non-harmful. We evaluate our model on well known safety benchmarks such as [Toxigen](https://arxiv.org/pdf/2203.09509) (5-shot, logits) (focused on detecting toxic language), [BBQ](https://arxiv.org/pdf/2110.08193) (5-shot, generation), [PopQA](https://arxiv.org/pdf/2212.10511) (5-shot, generation), and [CrowS-Pairs](https://aclanthology.org/2020.emnlp-main.154.pdf) (which measures bias and fairness). We intend to fix the gaps in safety through comprehensive SFT and DPO approaches.
+Safety benchmarks are crucial for ensuring AI models generate content that is ethical, inclusive, and non-harmful. We evaluate our model on well known safety benchmarks such as [Toxigen](https://arxiv.org/pdf/2203.09509) (5-shot, logits) (focused on detecting toxic language), [BBQ](https://arxiv.org/pdf/2110.08193) (5-shot, generation), [PopQA](https://arxiv.org/pdf/2212.10511) (5-shot, generation), and [CrowS-Pairs](https://aclanthology.org/2020.emnlp-main.154.pdf) (5-shot, logits. Measures bias and fairness). We intend to fix the gaps in safety through comprehensive SFT and DPO approaches.
 
 | Model | PopQA | Toxigen | BBQ  | Crow-SPairs* |
 | :---- | :---- | :---- | :---- | :---- |
@@ -189,7 +189,7 @@ Safety benchmarks are crucial for ensuring AI models generate content that is et
 | [IBM Granite v3 8B](https://huggingface.co/ibm-granite/granite-3.0-8b-base) | 27.5 | 79.9 | 82.1 | 75 |
 | [Olmo2 7B](https://huggingface.co/allenai/OLMo-2-1124-7B) | 25.7 | 63.1 | 58.4 | 72 |
 | [Gemma2 9B](https://huggingface.co/google/gemma-2-9b) | 27.3 | 69.6 | 59.9 | 71.7 |
-| [Qwen2.5 7B](https://huggingface.co/Qwen/Qwen2.5-7B) | | | |
+| [Qwen2.5 7B](https://huggingface.co/Qwen/Qwen2.5-7B) | 18.2 | 64.1| 78.1 | 70 |
 
 
 
