@@ -185,12 +185,13 @@ Safety benchmarks are crucial for ensuring AI models generate content that is et
 
 | Model | PopQA | Toxigen | BBQ  | Crow-SPairs* |
 | :---- | :---- | :---- | :---- | :---- |
-	@@ -189,7 +189,8 @@ Safety benchmarks are crucial for ensuring AI models generate content that is et
+| [Bamba 9B (2.2T)](https://huggingface.co/ibm-fms/Bamba-9B) | 20.5 | 57.4 | 44.2 | 70.8 |
+| [Falcon Mamba 7B](https://huggingface.co/tiiuae/falcon-mamba-7b) | 19.3 | 62.1 | 60.2 |  75.1 |
 | [IBM Granite v3 8B](https://huggingface.co/ibm-granite/granite-3.0-8b-base) | 27.5 | 79.9 | 82.1 | 75 |
 | [Olmo2 7B](https://huggingface.co/allenai/OLMo-2-1124-7B) | 25.7 | 63.1 | 58.4 | 72 |
+| [Olmo1.5 7B](https://huggingface.co/allenai/OLMo-7B-0424-hf) | 20.4 | 56.7 | 53.3 | 72.2 |
 | [Gemma2 9B](https://huggingface.co/google/gemma-2-9b) | 27.3 | 69.6 | 59.9 | 71.7 |
 | [Qwen2.5 7B](https://huggingface.co/Qwen/Qwen2.5-7B) | 18.2 | 64.1| 78.1 | 70 |
-| [Olmo1.5 7B](https://huggingface.co/allenai/OLMo-7B-0424-hf) | 20.4 | 56.7 | 53.3 | 72.2 |
 
 *Lower is better
 
