@@ -179,7 +179,7 @@ We compare Bamba-9B and Falcon Mamba with SoTA transformer models of similar siz
 
 ### Safety tasks
 
-Safety benchmarks are crucial for ensuring AI models generate content that is ethical, inclusive, and non-harmful. We evaluate our model on well known safety benchmarks such as [Toxigen](https://arxiv.org/pdf/2203.09509) (5-shot, logits) (focused on detecting toxic language), [BBQ](https://arxiv.org/pdf/2110.08193) (5-shot, generation), [PopQA](https://arxiv.org/pdf/2212.10511) (5-shot, generation), and [CrowS-Pairs](https://aclanthology.org/2020.emnlp-main.154.pdf) (5-shot, logits) measure bias and fairness. We intend to fix the gaps in safety through comprehensive SFT and DPO approaches.
+Safety benchmarks are crucial for ensuring AI models generate content that is ethical, inclusive, and non-harmful. We evaluate our model on well known safety benchmarks such as [Toxigen](https://arxiv.org/pdf/2203.09509) (5-shot, logits) (focused on detecting toxic language), [BBQ](https://arxiv.org/pdf/2110.08193) (5-shot, generation), [PopQA](https://arxiv.org/pdf/2212.10511) (5-shot, generation), and [CrowS-Pairs](https://aclanthology.org/2020.emnlp-main.154.pdf) (5-shot, logits) (measure bias and fairness). We intend to fix the gaps in safety through comprehensive SFT and DPO approaches.
 
 | Model | PopQA | Toxigen | BBQ  | Crow-SPairs* |
 | :---- | :---- | :---- | :---- | :---- |
