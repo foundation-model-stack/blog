@@ -190,6 +190,7 @@ Safety benchmarks are crucial for ensuring AI models generate content that is et
 | [Olmo2 7B](https://huggingface.co/allenai/OLMo-2-1124-7B) | 25.7 | 63.1 | 58.4 | 72 |
 | [Gemma2 9B](https://huggingface.co/google/gemma-2-9b) | 27.3 | 69.6 | 59.9 | 71.7 |
 | [Qwen2.5 7B](https://huggingface.co/Qwen/Qwen2.5-7B) | 18.2 | 64.1| 78.1 | 70 |
+| [Olmo1.5 7B](https://huggingface.co/allenai/OLMo-7B-0424-hf) | 20.4 | 56.7 | 53.3 | 72.2 |
 
 
 
